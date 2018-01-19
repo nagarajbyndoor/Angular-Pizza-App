@@ -1,0 +1,21 @@
+body{
+      font-family: Helvetica, sans-serif;
+}
+nav {
+      background-color: #4c4c4c;
+}
+nav li a, nav a {
+  color: #ffffff;
+}
+
+.navbar-light .navbar-nav .nav-link:active {
+  color: #c54531;
+}
+.navbar-brand {
+  font-family: 'ZillaSlab' Georgia, serif;
+  font-weight:bolder;
+}
+
+.name {
+    color: #c54531;
+}

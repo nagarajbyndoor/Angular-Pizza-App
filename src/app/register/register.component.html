@@ -1,0 +1,61 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+          </div>
+          <div class="col-sm-4">
+              <h2>Register</h2>
+              <form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm.value)">
+                  <div class="form-group">
+                      <div class="form-group" [ngClass]="{'has-error':!registerForm.controls['firstName'].valid && registerForm.controls['firstName'].touched}">
+                          <label>First Name:</label>
+                          <input class="form-control" type="text"  placeholder="John" [formControl]="registerForm.controls['firstName']">
+                            <!-- The hasError method will tell us if a particular error exists -->
+                            <div *ngIf="registerForm.controls['firstName'].hasError('required') && registerForm.controls['firstName'].touched" class="alert alert-danger">You must include a first name.</div>
+                        </div>
+                        <!-- We are using the ngClass directive to conditionally add a class to our div if the form is invalid -->
+                        <div class="form-group" [ngClass]="{'has-error':!registerForm.controls['lastName'].valid && registerForm.controls['lastName'].touched}">
+                          <label>Last Name</label>
+                          <input class="form-control" type="text" placeholder="Doe" [formControl]="registerForm.controls['lastName']">
+                          <div *ngIf="registerForm.controls['lastName'].hasError('required') && registerForm.controls['lastName'].touched" class="alert alert-danger">You must include a last name.</div>
+                          <div *ngIf="registerForm.controls['lastName'].hasError('minlength') && registerForm.controls['lastName'].touched" class="alert alert-danger">Your last name must be at least 3 characters long</div>
+                          <div *ngIf="registerForm.controls['lastName'].hasError('maxlength') && registerForm.controls['lastName'].touched" class="alert alert-danger">Your last name cannot exceed 10 characters</div>
+                        </div>
+                        <div class="form-group" [ngClass]="{'has-error':!registerForm.controls['password'].valid && registerForm.controls['password'].touched}">
+                          <label>Password</label>
+                          <input class="form-control" type="password" placeholder="password" [formControl]="registerForm.controls['password']">
+                          <div *ngIf="registerForm.controls['password'].hasError('required') && registerForm.controls['password'].touched" class="alert alert-danger">You must enter password</div>
+                        </div>
+                        <div class="form-group" [ngClass]="{'has-error':!registerForm.controls['email'].valid && registerForm.controls['email'].touched}">
+                          <label>Email:</label>
+                          <input class="form-control" type="text" placeholder="John@example.com" [formControl]="registerForm.controls['email']">
+                          <div *ngIf="registerForm.controls['email'].hasError('required') && registerForm.controls['email'].touched" class="alert alert-danger">You must enter a correct email.</div>
+                        </div>
+                        <div class="form-group" [ngClass]="{'has-error':!registerForm.controls['gender'].valid && registerForm.controls['gender'].touched}">
+                          <label>Gender</label>
+                          <!-- Here we are using the ngIf directive to display an error message if the user has not selected a gender since we can’t color the radio buttons. -->
+                          <div class="alert alert-danger" *ngIf="!registerForm.controls['gender'].valid && registerForm.controls['gender'].touched">You must select a gender.</div>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="gender" value="Male" [formControl]="registerForm.controls['gender']">
+                            Male
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="gender" value="Female" [formControl]="registerForm.controls['gender']">
+                            Female
+                          </label>
+                        </div>
+                      <div class="form-group">
+                          <button type="submit" class="btn btn-danger" [disabled]="!registerForm.valid">Submit</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="col-sm-4">
+          </div>
+    </div>
+  </div>
+</div>

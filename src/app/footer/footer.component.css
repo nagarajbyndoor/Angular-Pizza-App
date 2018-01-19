@@ -1,0 +1,24 @@
+/* footer */
+#footer-container {
+    color: #fff;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .charcoal {
+    background: #4c4c4c;
+  }
+  
+  #footer-container #footer {
+    margin: 0 auto;
+    padding: 24px 150px;
+    font-size: 12px;
+    line-height: 1.29;
+}
+
+.footer-text {
+    text-align: center;
+    padding: 20px;
+}
+
+

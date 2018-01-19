@@ -1,0 +1,8 @@
+[
+      {"pizzaId": 1111, "pizzaName": "Fruit Crust cocumber Pizza", "pizzaType": "Fruit Pizza", "pizzaDescription":"Crushed Mango, fresh mozzarella cheese, fresh basil.", "pizzaPrice": 13},
+      {"pizzaId": 1111, "pizzaName": "Chicken Chees corn Pizza", "pizzaType": "Fruit Pizza", "pizzaDescription":"Crushed chees, fresh mozzarella cheese, fresh basil.", "pizzaPrice": 10},
+      {"pizzaId": 1111, "pizzaName": "Chicken Crust buttur Pizza", "pizzaType": "Fruit Pizza", "pizzaDescription":"Crushed tomatoes, fresh mozzarella cheese, fresh basil.", "pizzaPrice": 12},
+      {"pizzaId": 1111, "pizzaName": "Fish Crust icecream Pizza", "pizzaType": "Fruit Pizza", "pizzaDescription":"Crushed chicken, fresh mozzarella cheese, fresh basil.", "pizzaPrice": 15},
+      {"pizzaId": 1111, "pizzaName": "Fruit Crust buttur Pizza", "pizzaType": "Fruit Pizza", "pizzaDescription":"Crushed tomatoes, fresh mozzarella cheese, fresh basil.", "pizzaPrice": 23}
+     
+]

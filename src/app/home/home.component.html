@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="container-fluid">
+    <div class="covercase">
+      <img class="img-fluid" src="https://slicelife.imgix.net/defaults/heroes/hero-desktop.jpg?auto=compress&auto=format" alt="yummie pizza">
+    </div>
+    <div id="menu-container" class="menu-box">
+      <div class="card white text-center mx-auto  card-caption position-relative">
+        <div class="menu">
+          <h1>{{topPizzaChicken[0].pizzaType}}</h1>
+          <hr/>
+          <div class="menu-items">
+              <div class="menu-description">
+                  <h3 class="font-brick u-margin-bot3">{{topPizzaChicken[0].pizzaName}}</h3>
+                    <p>{{topPizzaChicken[0].pizzaDescription}}</p>
+                    <div class="menu-price">
+                        {{topPizzaChicken[0].pizzaPrice | currency}}
+                      </div>
+                </div>
+          </div>
+          <hr/>
+          <h1>{{topPizzaFruit[0].pizzaType}}</h1>
+          <hr/>
+          <div *ngFor="let item of topPizzaFruit let i=index">
+            <div class="menu-items">
+              <div class="menu-description">
+                <h3 class="font-brick u-margin-bot3">{{topPizzaFruit[i].pizzaName}}</h3>
+                  <p>{{topPizzaFruit[i].pizzaDescription}}</p>
+                    <div class="menu-price">
+                       {{topPizzaFruit[i].pizzaPrice | currency}}
+                    </div>
+                </div>
+              </div>
+              <hr/>     
+            </div>  
+         </div>
+        <div class="d-flex menu-buttons">
+            <div class="btn btn-secondary font-load-fast"><span  class="full-menu-link"><a routerLink="full-menu">Full Menu</a></span></div>
+            <div class="btn btn-primary"><span>Schedule Order on Slice</span></div>
+        </div>
+      </div>
+    </div>    
+</div>    
+</div>
