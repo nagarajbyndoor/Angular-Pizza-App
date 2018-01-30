@@ -7,6 +7,7 @@ import { FormGroup, FormBuilder, Validators  } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  isSuccess:boolean=false;
   registerForm : FormGroup;
   constructor(fb: FormBuilder) { 
     this.registerForm = fb.group({
@@ -23,5 +24,10 @@ export class RegisterComponent implements OnInit {
   
   submitForm(value: any){
     console.log(value);
+    if (this.registerForm.valid) {
+      console.log("Form Submitted!");
+      this.isSuccess =true;
+      this.registerForm.reset();
+    }
   }
 }

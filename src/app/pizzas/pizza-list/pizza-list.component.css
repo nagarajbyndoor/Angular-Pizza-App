@@ -1,0 +1,9 @@
+input .ng-invalid.ng-dirty {
+    border: 1px solid red;
+}
+
+button,ul.list-group.hover li:hover {
+    cursor: pointer;
+    background-color: rgb(243, 114, 114);
+    color: white;
+}

@@ -3,6 +3,7 @@ body{
 }
 nav {
       background-color: #4c4c4c;
+      border-bottom: 3px solid #d9534f;
 }
 nav li a, nav a {
   color: #ffffff;

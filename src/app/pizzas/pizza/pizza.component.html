@@ -1,0 +1,28 @@
+<form #pizzaForm = "ngForm" (ngSubmit)="onSubmit(pizzaForm)">
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="pizzaService.selectedPizza.$key" >
+  <div class="form-group">
+    <label>Pizza Name</label>
+    <input class="form-control" name="pizzaName" #name="ngModel" [(ngModel)]="pizzaService.selectedPizza.pizzaName" placeholder="Pizza Name" required>
+  </div>
+  <div class="form-group">
+    <label>Pizza Description</label>
+    <input class="form-control" name="pizzaDescription" #name="ngModel" [(ngModel)]="pizzaService.selectedPizza.pizzaDescription" placeholder="Pizza Description" required>
+  </div>
+  <div class="form-group">
+    <label>Pizza Type</label>
+    <input class="form-control" name="pizzaType" #name="ngModel" [(ngModel)]="pizzaService.selectedPizza.pizzaType" placeholder="Pizza Type" required>
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input class="form-control" name="pizzaPrice" #name="ngModel" [(ngModel)]="pizzaService.selectedPizza.pizzaPrice" placeholder="Price" required>
+  </div>
+  <div class="form-group">
+    <label>Image URL</label>
+    <input class="form-control" name="imgUrl" #name="ngModel" [(ngModel)]="pizzaService.selectedPizza.imgUrl" placeholder="Image URL" required>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="!pizzaForm.valid"><i class="fa fa-floppy-o"></i>Submit</button>  
+    <button type="button" class="btn btn-danger" *ngIf="pizzaService.selectedPizza.$key!=null" (click)="onDelete(pizzaForm)">Delete</button>  
+    <button type="button" class="btn btn-info"><i class="fa fa-repeat" (click)="resetForm()"></i>Reset</button>  
+  </div>
+</form>

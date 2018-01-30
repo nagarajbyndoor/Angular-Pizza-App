@@ -2,6 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { environment } from './../environments/environment';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,6 +21,9 @@ import { FooterComponent } from './footer/footer.component';
 import { TopChickenPizzaService } from './home/top-chicken-pizza.service';
 import { TopFruitPizzaService } from './home/top-fruit-pizza.service';
 import { FullMenuComponent } from './full-menu/full-menu.component';
+import { PizzasComponent } from './pizzas/pizzas.component';
+import { PizzaComponent } from './pizzas/pizza/pizza.component';
+import { PizzaListComponent } from './pizzas/pizza-list/pizza-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +35,10 @@ import { FullMenuComponent } from './full-menu/full-menu.component';
     AboutComponent,
     MenuComponent,
     FooterComponent,
-    FullMenuComponent
+    FullMenuComponent,
+    PizzasComponent,
+    PizzaComponent,
+    PizzaListComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +46,11 @@ import { FullMenuComponent } from './full-menu/full-menu.component';
     FormsModule,
     // Including the ReactiveFormsModule in our application
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    NgbModule.forRoot()
   ],
   providers: [TopChickenPizzaService,TopFruitPizzaService],
   bootstrap: [AppComponent]

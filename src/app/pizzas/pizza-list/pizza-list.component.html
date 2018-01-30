@@ -1,0 +1,6 @@
+<h4 class="display-6">Pizza List</h4>
+<ul class="list-group hover">
+  <li class="list-group-item list-group-item-danger" *ngFor = "let pizza of pizzaList" (click)="onItemCLick(pizza)">
+    {{pizza.pizzaName}} - <span class="badge badge-danger badge-pill">{{pizza.pizzaPrice|currency}}</span>
+  </li>
+</ul>

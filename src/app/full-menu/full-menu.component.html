@@ -1,4 +1,17 @@
-<h1>Pizza Menu List</h1>
-<ol *ngFor="let pizza of pizzaFullMenu let i=index">
-  <li>{{pizzaFullMenu[i].pizzaName}}</li>
-</ol>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"  *ngFor="let pizza of pizzaFullMenuObservable | async">
+          <div class="card text-center">
+              <div class="card-block">
+                  <img class="card-img-top img-fluid" src="{{pizza.imgUrl}}" alt="{{pizza.pizzaName} image">
+                  <div class="card-body">
+                    <h5 class="card-title">{{pizza.pizzaName}}</h5>
+                    <p class="card-text">{{pizza.pizzaDescription}}</p>
+                    <h4>{{pizza.pizzaPrice | currency}}</h4>
+                    <button><a href="#"  class="btn btn-danger">ADD TO CART</a></button>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>

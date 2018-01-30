@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FullMenuService } from './full-menu.service';
+import { AngularFireDatabase } from 'angularfire2/database'; 
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-full-menu',
@@ -7,12 +8,13 @@ import { FullMenuService } from './full-menu.service';
   styleUrls: ['./full-menu.component.css']
 })
 export class FullMenuComponent implements OnInit {
-  pizzaFullMenu = [];
-  constructor(private _pizzaFullMenuService : FullMenuService) { }
- 
+  pizzaFullMenuObservable: Observable<any[]>;
+  constructor(private db: AngularFireDatabase) { }
   ngOnInit() {
-    this._pizzaFullMenuService.getFullMenu()
-        .subscribe((resPizzaFullMenu => this.pizzaFullMenu = resPizzaFullMenu));
+    this.pizzaFullMenuObservable = this.getPizzaFullMenu('/pizza-full-menu');
+  }
+  getPizzaFullMenu(listPath): Observable<any[]> {
+    return this.db.list(listPath).valueChanges();
   }
 
 }
