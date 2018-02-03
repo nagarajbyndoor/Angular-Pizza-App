@@ -1,0 +1,28 @@
+<div class="container">
+  <hr/>
+  <div class="row justify-content-center">
+    <div class="card">
+        <div class="card-block">
+          <h4 class="card-title text-muted mt-2 mb-4">Register To Your Account</h4>
+          <form   #signUp= "ngForm" novalidate [formGroup]="registerForm" (ngSubmit)="register(signUp.value)">
+              <div class="form-group">
+                  <div class="form-group" [ngClass]="{'has-error':!registerForm.controls['email'].valid && registerForm.controls['email'].touched}">
+                    <label>User Name</label>
+                    <input type="email" name="user" placeholder="Email Address" class="form-control" [formControl]="registerForm.controls['email']">
+                    <!-- The hasError method will tell us if a particular error exists -->
+                    <div *ngIf="registerForm.controls['email'].hasError('required') && registerForm.controls['email'].touched" class="alert alert-danger">You must include a first name.</div>
+                  </div>
+                  <div class="form-group" [ngClass]="{'has-error':!registerForm.controls['password'].valid && registerForm.controls['password'].touched}">
+                    <label>Password</label>
+                    <input type="password" name="pass" placeholder="Password" class="form-control" [formControl]="registerForm.controls['password']">
+                    <!-- The hasError method will tell us if a particular error exists -->
+                    <div *ngIf="registerForm.controls['password'].hasError('required') && registerForm.controls['password'].touched" class="alert alert-danger">You must include a password.</div>
+                  </div>
+                  <input type="submit" name="register" [disabled]="!registerForm.valid" class="btn btn-danger" value="Register">
+              </div>
+          </form>     
+        </div>
+    </div>
+  </div>
+  <hr/>
+</div>  

@@ -2,16 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http'; 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 import { environment } from './../environments/environment';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
@@ -24,12 +25,18 @@ import { FullMenuComponent } from './full-menu/full-menu.component';
 import { PizzasComponent } from './pizzas/pizzas.component';
 import { PizzaComponent } from './pizzas/pizza/pizza.component';
 import { PizzaListComponent } from './pizzas/pizza-list/pizza-list.component';
+import { AuthGuard } from './auth.guard';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthService } from './shared/auth/auth.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
     RegisterComponent,
     ContactComponent,
     AboutComponent,
@@ -38,11 +45,18 @@ import { PizzaListComponent } from './pizzas/pizza-list/pizza-list.component';
     FullMenuComponent,
     PizzasComponent,
     PizzaComponent,
-    PizzaListComponent
+    PizzaListComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     // Including the ReactiveFormsModule in our application
     ReactiveFormsModule,
@@ -52,7 +66,7 @@ import { PizzaListComponent } from './pizzas/pizza-list/pizza-list.component';
     AngularFireAuthModule,
     NgbModule.forRoot()
   ],
-  providers: [TopChickenPizzaService,TopFruitPizzaService],
+  providers: [TopChickenPizzaService, TopFruitPizzaService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

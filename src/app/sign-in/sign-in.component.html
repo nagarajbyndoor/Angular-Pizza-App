@@ -1,0 +1,27 @@
+<div class="container">
+        <hr/>
+        <div class="row justify-content-center">
+          <div class="card">
+              <div class="card-block">
+                <h4 class="card-title text-muted mt-2 mb-4">Login To Your Account</h4>
+                <form   #signIn= "ngForm" novalidate [formGroup]="form" (ngSubmit)="login(signIn.value)">
+                        <div class="form-group">
+                            <label>User Name</label>
+                            <input type="email" name="user" placeholder="Email Address" class="form-control" formControlName="email">
+                            <label>Password</label>
+                            <input type="password" name="pass" placeholder="Password" class="form-control" formControlName="password"><br>
+                            <input type="submit" name="login" class="btn btn-danger" value="login">
+                            <div class="mt-2">
+                                <span routerlink="sign-up" class="text-muted" (click)="signUp()">Register</span> - <span routerlink="forgot-password" (click)="forgotPass()" class="text-muted">Forgot Password</span> 
+                            </div>
+                            <div class="mt-2">
+                                <button class="btn btn-info" (click)="loginWithGoogle()">Login with Google</button>
+                            </div>
+                        </div>
+                </form>     
+              </div>
+          </div>
+        </div>
+        <hr/>
+</div>  
+      

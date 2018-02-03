@@ -8,6 +8,9 @@ nav {
 nav li a, nav a {
   color: #ffffff;
 }
+nav li a, nav a :hover {
+  color: #ffffff;
+}
 
 .navbar-light .navbar-nav .nav-link:active {
   color: #c54531;
