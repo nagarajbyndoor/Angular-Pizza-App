@@ -12,9 +12,7 @@ nav li a, nav a :hover {
   color: #ffffff;
 }
 
-.navbar-light .navbar-nav .nav-link:active {
-  color: #c54531;
-}
+
 .navbar-brand {
   font-family: 'ZillaSlab' Georgia, serif;
   font-weight:bolder;

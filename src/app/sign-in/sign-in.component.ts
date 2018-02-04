@@ -49,7 +49,7 @@ export class SignInComponent implements OnInit {
   }
 
   signUp() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['/sign-up']);
   }
 
   forgotPass() {
