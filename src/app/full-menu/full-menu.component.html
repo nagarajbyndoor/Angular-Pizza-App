@@ -1,4 +1,18 @@
 <div class="container">
+    <div class="row mt-4 mb-4">
+        <div class="col-sm-4">
+                <span class="glyphicons glyphicons-home"></span>
+            <input type="text" class="form-control" placeholder="Search pizza"/>
+        </div>
+        <div class="col-sm-4">
+                <span class="glyphicon glyphicon-shopping-cart"></span><button type="button" class="btn btn-danger">Total price: <span class="badge">${{totalPrice}}</span></button> 
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-shopping-cart"></span><button type="button" class="btn btn-danger">Cart <span class="badge">{{pizzaCount}}</span></button>              
+        </div>
+    </div>
+</div>
+<div class="container">
     <div class="row">
         <div class="col-sm-4"  *ngFor="let pizza of pizzaFullMenuObservable | async">
           <div class="card text-center">
@@ -8,7 +22,7 @@
                     <h5 class="card-title">{{pizza.pizzaName}}</h5>
                     <p class="card-text">{{pizza.pizzaDescription}}</p>
                     <h4>{{pizza.pizzaPrice | currency}}</h4>
-                    <button><a href="#"  class="btn btn-danger">ADD TO CART</a></button>
+                    <button class="btn btn-danger" ><a (click)="addCartCount(pizza.pizzaPrice)">ADD TO CART</a></button>
                   </div>
               </div>
           </div>
